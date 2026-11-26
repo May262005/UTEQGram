@@ -1,0 +1,107 @@
+#create-post {
+    z-index: 1001;
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    overflow-y: scroll;
+    bottom: 0;
+    top: 56px;
+    background: white;
+    text-align: center;
+    transform: translateY(100vh);
+    transition: transform 0.3s ease-in-out;
+}
+
+.main-image {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+}
+
+.floating-button {
+    z-index: 1000;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 30px;
+}
+
+.input-section {
+    display: block;
+    margin: 10px auto;
+}
+
+.shared-moment-card.mdl-card {
+    width: 80%;
+    max-width: 520px;
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.14);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.shared-moment-card.mdl-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.shared-moment-card .mdl-card__title {
+    position: relative;
+    min-height: 180px;
+    overflow: hidden;
+}
+
+.shared-moment-card .mdl-card__title::before {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.55));
+    content: "";
+}
+
+.shared-moment-card .mdl-card__title-text {
+    z-index: 1;
+    color: #fff;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+}
+
+.shared-moment-card .mdl-card__supporting-text {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px;
+    color: #616161;
+}
+
+@media (min-width: 600px) {
+    #shared-moments {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: center;
+        gap: 20px;
+    }
+
+    .shared-moment-card.mdl-card {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1000px) {
+    #shared-moments {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .shared-moment-card.mdl-card {
+        max-width: none;
+    }
+}
+
+@media (max-width: 599px) {
+    .shared-moment-card.mdl-card {
+        width: calc(100% - 32px);
+    }
+
+    .shared-moment-card .mdl-card__title {
+        min-height: 165px;
+    }
+}
